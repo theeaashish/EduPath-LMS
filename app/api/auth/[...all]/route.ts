@@ -1,4 +1,3 @@
-
 import { auth } from "@/lib/auth";
 import ip from "@arcjet/ip";
 import aj, {
@@ -15,7 +14,6 @@ import aj, {
 import arcjet from "@/lib/arcjet";
 import { toNextJsHandler } from "better-auth/next-js";
 import { NextRequest } from "next/server";
-
 
 const emailOptions = {
   mode: "LIVE", // will block requests. Use "DRY_RUN" to log only
@@ -82,7 +80,9 @@ async function protect(req: NextRequest): Promise<ArcjetDecision> {
     }
   } else {
     // For all other auth requests
-    return arcjet.withRule(detectBot(botOptions)).protect(req, { fingerprint: userId });
+    return arcjet
+      .withRule(detectBot(botOptions))
+      .protect(req, { fingerprint: userId });
   }
 }
 
