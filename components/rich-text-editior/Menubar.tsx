@@ -31,7 +31,7 @@ export function Menubar({ editor }: iAppProps) {
   if (!editor) return null;
 
   return (
-    <div className="border border-input rounded-t-lg p-2 bg-card flex flex-wrap gap-1 items-center">
+    <div className="p-2 bg-card flex flex-wrap gap-1 items-center">
       <TooltipProvider>
         <div className="flex flex-wrap gap-2">
           <Tooltip>
@@ -245,7 +245,10 @@ export function Menubar({ editor }: iAppProps) {
                 type="button"
                 onClick={() => editor.chain().focus().undo().run()}
                 disabled={!editor.can().undo()}
-              > <Undo /> </Button>
+              >
+                {" "}
+                <Undo />{" "}
+              </Button>
             </TooltipTrigger>
             <TooltipContent>Undo</TooltipContent>
           </Tooltip>
@@ -257,7 +260,10 @@ export function Menubar({ editor }: iAppProps) {
                 type="button"
                 onClick={() => editor.chain().focus().redo().run()}
                 disabled={!editor.can().redo()}
-              > <Redo /> </Button>
+              >
+                {" "}
+                <Redo />{" "}
+              </Button>
             </TooltipTrigger>
             <TooltipContent>Redo</TooltipContent>
           </Tooltip>
