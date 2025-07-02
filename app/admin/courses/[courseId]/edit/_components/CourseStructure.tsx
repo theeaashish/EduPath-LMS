@@ -32,14 +32,15 @@ import {
   ChevronDown,
   ChevronRight,
   FileText,
-  Ghost,
   GripVertical,
-  Trash2,
 } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
 import { reorderChapters, reorderLessons } from "../actions";
 import { NewChapterModel } from "./NewChapterModel";
+import { NewLessonModel } from "./NewLessonModel";
+import DeleteLesson from "./DeleteLesson";
+import DeleteChapter from "./DeleteChapter";
 
 interface iAppProps {
   data: AdminCourseSingularType;
@@ -332,9 +333,7 @@ export function CourseStructure({ data }: iAppProps) {
                           </p>
                         </div>
 
-                        <Button size="icon" variant="outline">
-                          <Trash2 className="size-4" />
-                        </Button>
+                        <DeleteChapter chapterId={item.id} courseId={data.id} />
                       </div>
 
                       <CollapsibleContent>
@@ -367,18 +366,21 @@ export function CourseStructure({ data }: iAppProps) {
                                         {lesson.title}
                                       </Link>
                                     </div>
-                                    <Button size="icon" variant="outline">
-                                      <Trash2 className="size-4" />
-                                    </Button>
+                                    <DeleteLesson
+                                      chapterId={item.id}
+                                      courseId={data.id}
+                                      lessonId={lesson.id}
+                                    />
                                   </div>
                                 )}
                               </SortableItem>
                             ))}
                           </SortableContext>
                           <div className="p-2">
-                            <Button variant="outline" className="w-full">
-                              Create New Lesson
-                            </Button>
+                            <NewLessonModel
+                              chapterId={item.id}
+                              courseId={data.id}
+                            />
                           </div>
                         </div>
                       </CollapsibleContent>
