@@ -39,6 +39,7 @@ import {
 import Link from "next/link";
 import { toast } from "sonner";
 import { reorderChapters, reorderLessons } from "../actions";
+import { NewChapterModel } from "./NewChapterModel";
 
 interface iAppProps {
   data: AdminCourseSingularType;
@@ -289,6 +290,7 @@ export function CourseStructure({ data }: iAppProps) {
       <Card>
         <CardHeader className="flex flex-row items-center justify-between border-b border-border">
           <CardTitle>Chapters</CardTitle>
+          <NewChapterModel courseId={data.id} />
         </CardHeader>
 
         <CardContent className="space-y-8">
