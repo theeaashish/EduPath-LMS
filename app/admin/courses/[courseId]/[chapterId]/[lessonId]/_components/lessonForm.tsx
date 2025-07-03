@@ -83,7 +83,7 @@ export default function LessonForm({ chapterId, data, courseId }: iAppProps) {
 
       <Card>
         <CardHeader>
-          <CardTitle>Lesson Configuration</CardTitle>
+          <CardTitle>Lesson Configuration </CardTitle>
           <CardDescription>
             Configure the video and description for this lesson.
           </CardDescription>
