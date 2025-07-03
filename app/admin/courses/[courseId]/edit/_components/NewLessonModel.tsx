@@ -65,6 +65,7 @@ export function NewLessonModel({
   }
 
   function handleOpenChange(open: boolean) {
+    if (!open) form.reset();
     setIsOpen(open);
   }
 
