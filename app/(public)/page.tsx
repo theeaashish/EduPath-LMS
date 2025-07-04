@@ -58,7 +58,7 @@ export default function Home() {
               href="/login"
               className={buttonVariants({ size: "lg", variant: "outline" })}
             >
-              SignIn
+              Login
             </Link>
           </div>
         </div>

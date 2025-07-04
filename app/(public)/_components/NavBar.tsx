@@ -22,11 +22,11 @@ export default function NavBar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-[backdrop-filter]:bg-background/60">
       <div className="container flex min-h-16 items-center mx-auto px-4 md:px-6 lg:px-8">
         {/* desktop navigation */}
-        <nav className="hidden md:flex-1 md:flex md:items-center md:justify-between">
+        <nav className="flex-1 flex items-center justify-between">
           <Link href="/">
             <MainLogo />
           </Link>
-          <div className="flex items-center space-x-8">
+          <div className="hidden md:flex md:items-center md:space-x-8">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
