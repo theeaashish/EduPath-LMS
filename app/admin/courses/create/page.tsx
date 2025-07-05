@@ -133,7 +133,7 @@ export default function CourseCreationPage() {
                     <FormItem className="w-full">
                       <FormLabel>Slug</FormLabel>
                       <FormControl>
-                        <Input placeholder="Slug" {...field} />
+                        <Input className="lowercase" placeholder="Slug" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
