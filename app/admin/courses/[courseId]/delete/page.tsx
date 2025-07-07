@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { tryCatch } from "@/hooks/try-catch";
 import Link from "next/link";
-import { startTransition, useTransition } from "react";
+import { useTransition } from "react";
 import { toast } from "sonner";
 import { deleteCourse } from "./actions";
 import { useParams, useRouter } from "next/navigation";

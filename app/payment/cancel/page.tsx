@@ -14,7 +14,7 @@ export default function PaymentCancelled() {
           <div className="mt-3 text-center sm:mt-5 w-full">
             <h2 className="text-xl font-semibold">Payment Cancelled</h2>
             <p className="text-sm mt-2 text-muted-foreground tracking-tight text-balance">
-              No worries, you won't be charged, please try again!
+              No worries, you will not be charged, please try again!
             </p>
             <Link
               className={buttonVariants({

@@ -19,7 +19,7 @@ export default function NotAdminPage() {
           </div>
           <CardTitle className="text-2xl">Access Restricted</CardTitle>
           <CardDescription className="max-w-sm text-balance mx-auto">
-            Hey! User You are not admin, which means you can't create any
+            Hey! User You are not admin, which means you can not create any
             courses or stuff like that...
           </CardDescription>
           <CardContent>

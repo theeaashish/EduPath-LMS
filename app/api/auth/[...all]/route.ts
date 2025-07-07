@@ -1,6 +1,6 @@
 import { auth } from "@/lib/auth";
 import ip from "@arcjet/ip";
-import aj, {
+import {
   type ArcjetDecision,
   type BotOptions,
   type EmailOptions,

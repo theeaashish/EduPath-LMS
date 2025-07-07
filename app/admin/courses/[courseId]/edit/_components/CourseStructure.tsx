@@ -242,7 +242,7 @@ export function CourseStructure({ data }: iAppProps) {
       setItems(newItems);
 
       if (courseId) {
-        const lessonToUpdate = updatedLessonForState.map((lesson, index) => ({
+        const lessonToUpdate = updatedLessonForState.map((lesson) => ({
           id: lesson.id,
           position: lesson.order,
         }));

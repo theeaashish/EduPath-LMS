@@ -19,7 +19,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useTransition } from "react";
 import { toast } from "sonner";
 
-export default function () {
+export default function VerifyRequest() {
   const router = useRouter();
   const [emailPending, startEmailTransition] = useTransition();
   const [otp, setOtp] = useState("");

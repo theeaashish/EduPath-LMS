@@ -71,7 +71,7 @@ export async function editCourse(
       status: "success",
       message: "Course updated successfully",
     };
-  } catch (error) {
+  } catch {
     return {
       status: "error",
       message: "Failed to update course",
@@ -112,7 +112,7 @@ export async function reorderLessons(
       status: "success",
       message: "Lessons reordered successfully",
     };
-  } catch (error) {
+  } catch {
     return {
       status: "error",
       message: "Failed to reorder lessons",
@@ -152,7 +152,7 @@ export async function reorderChapters(
       status: "success",
       message: "Chapters reordered successfully",
     };
-  } catch (error) {
+  } catch {
     return {
       status: "error",
       message: "Failed to reorder chapters",

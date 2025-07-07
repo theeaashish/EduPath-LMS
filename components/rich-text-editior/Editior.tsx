@@ -5,7 +5,16 @@ import StarterKit from "@tiptap/starter-kit";
 import { Menubar } from "./Menubar";
 import TextAlign from "@tiptap/extension-text-align";
 
-export function RichTextEditior({ field }: { field: any }) {
+interface RichTextField {
+  onChange: (value: string) => void;
+  value: string | undefined;
+}
+
+interface RichTextEditiorProps {
+  field: RichTextField;
+}
+
+export function RichTextEditior({ field }: RichTextEditiorProps) {
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -27,7 +36,10 @@ export function RichTextEditior({ field }: { field: any }) {
       field.onChange(JSON.stringify(editor.getJSON()));
     },
 
-    content: field.value ? JSON.parse(field.value) : "<p> Hello World 👋 </p>",
+    content:
+      typeof field.value === "string" && field.value.length > 0
+        ? JSON.parse(field.value)
+        : "<p> Hello World 👋 </p>",
   });
 
   return (

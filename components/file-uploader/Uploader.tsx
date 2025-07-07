@@ -122,7 +122,7 @@ export function Uploader({ value, onChange, fileTypeAccepted }: iAppProps) {
           xhr.setRequestHeader("Content-Type", file.type);
           xhr.send(file);
         });
-      } catch (error) {
+      } catch {
         toast.error("Something went wrong");
         setFileState((prev) => ({
           ...prev,
@@ -209,7 +209,7 @@ export function Uploader({ value, onChange, fileTypeAccepted }: iAppProps) {
       }));
 
       toast.success("File deleted successfully");
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong while deleting the file");
       setFileState((prev) => ({
         ...prev,
