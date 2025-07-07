@@ -15,7 +15,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 
 export const description = "An interactive area chart";
 
@@ -116,16 +116,18 @@ export function ChartAreaInteractive({ data }: ChartAreaInteractiveProps) {
 
             <ChartTooltip
               content={
-                <ChartTooltipContent
+                (
+                  <ChartTooltipContent
                   className="w-[150px]"
-                  labelFormatter={(value) => {
-                    const date = new Date(value);
+                  labelFormatter={(label: React.ReactNode) => {
+                    const date = new Date(String(label));
                     return date.toLocaleDateString("en-IN", {
                       month: "short",
                       day: "numeric",
                     });
                   }}
                 />
+                ) as React.ReactElement
               }
             />
 
