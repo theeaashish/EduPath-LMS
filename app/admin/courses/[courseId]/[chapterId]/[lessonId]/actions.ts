@@ -28,7 +28,7 @@ export async function updateLesson(
         title: result.data.name,
         description: result.data.description,
         thumbnailKey: result.data.thumbnailKey,
-        videoKey: result.data.thumbnailKey,
+        videoKey: result.data.videoKey,
       },
     });
 
