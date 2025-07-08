@@ -23,8 +23,8 @@ export function CourseSidebar({ course }: CourseSidebarProps) {
     <div className="flex flex-col h-full">
       <div className="pb-4 br-4 border-b border-border">
         <div className="flex items-center gap-3 mb-3">
-          <div className="size-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-            <PlayIcon className="size-5 text-primary" />
+          <div className="size-10 max-sm:size-8 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+            <PlayIcon className="size-5 max-sm:size-4 text-primary" />
           </div>
           <div className="flex-1 min-w-0">
             <h1 className="font-semibold text-base leading-tight truncate">
@@ -49,7 +49,7 @@ export function CourseSidebar({ course }: CourseSidebarProps) {
           </p>
         </div>
       </div>
-      <div className="py-4 pr-4 space-y-3">
+      <div className="py-4 sm:pr-4 space-y-3">
         {course.chapter.map((chapter, index) => (
           <Collapsible key={chapter.id} defaultOpen={index === 0}>
             <CollapsibleTrigger asChild>

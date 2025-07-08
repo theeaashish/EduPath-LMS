@@ -12,5 +12,9 @@ export default async function LoginPage() {
     redirect("/");
   }
 
-  return <LoginForm />;
+  return (
+    <div className="max-sm:px-5">
+      <LoginForm />
+    </div>
+  );
 }

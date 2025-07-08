@@ -12,9 +12,9 @@ export default async function CourseLayout({ children, params }: iAppProps) {
   //server side security check and lighweight data fetching
   const course = await getCourseSidebarData(slug);
   return (
-    <div className="flex flex-1">
+    <div className="flex sm:flex-1 max-sm:flex-col">
       {/* sidebar - 30% */}
-      <div className="w-80 border-r border-border shrink-0">
+      <div className="sm:w-80 sm:border-r border-border shrink-0">
         <CourseSidebar course={course.course} />
       </div>
       {/* main content - 70% */}

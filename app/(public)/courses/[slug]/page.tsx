@@ -48,7 +48,7 @@ const SlugPage = async ({ params }: { params: Params }) => {
         </div>
         <div className="mt-8 space-y-6">
           <div className="space-y-4">
-            <h1 className="text-4xl font-bold tracking-tight">
+            <h1 className="text-4xl max-sm:text-3xl font-bold tracking-tight">
               {course.title}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed line-clamp-2">
@@ -80,10 +80,10 @@ const SlugPage = async ({ params }: { params: Params }) => {
         </div>
         <div className="mt-12 space-y-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-3xl font-semibold tracking-tight">
+            <h2 className="text-3xl max-sm:text-2xl font-semibold tracking-tight">
               Course Content
             </h2>
-            <div>
+            <div className="max-sm:text-sm">
               {course.chapter.length} Chapters |{" "}
               {course.chapter.reduce(
                 (total, chapter) => total + chapter.lesson.length,
@@ -102,11 +102,11 @@ const SlugPage = async ({ params }: { params: Params }) => {
                       <CardContent className="p-6 hover:bg-muted/50 transition-colors">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-4">
-                            <p className="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary font-semibold">
+                            <p className="flex size-10 max-sm:size-8 items-center justify-center rounded-full bg-primary/10 text-primary font-semibold">
                               {index + 1}
                             </p>
                             <div>
-                              <h3 className="text-xl font-semibold text-left">
+                              <h3 className="text-xl max-sm:text-lg font-semibold text-left">
                                 {chapter.title}
                               </h3>
                               <p className="text-sm text-muted-foreground mt-1 text-left">
@@ -116,7 +116,10 @@ const SlugPage = async ({ params }: { params: Params }) => {
                             </div>
                           </div>
                           <div className="flex items-center gap-3">
-                            <Badge variant="outline" className="text-xs">
+                            <Badge
+                              variant="outline"
+                              className="text-xs max-sm:hidden"
+                            >
                               {chapter.lesson.length} lesson
                               {chapter.lesson.length !== 1 ? "s" : ""}
                             </Badge>

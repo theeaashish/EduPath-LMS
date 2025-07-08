@@ -75,7 +75,7 @@ export function CourseContent({ data }: iAppProps) {
   }
 
   return (
-    <div className="flex flex-col h-full bg-background pl-6">
+    <div className="flex flex-col h-full bg-background sm:pl-6">
       <VideoPlayer
         thumbnailKey={data.thumbnailKey ?? ""}
         videoKey={data.videoKey ?? ""}

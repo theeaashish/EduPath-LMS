@@ -56,11 +56,19 @@ export default function NavBar() {
               <>
                 <Link
                   href="/login"
-                  className={buttonVariants({ variant: "outline" })}
+                  className={buttonVariants({
+                    variant: "outline",
+                    className: "max-sm:hidden",
+                  })}
                 >
                   Login
                 </Link>
-                <Link href="/login" className={buttonVariants()}>
+                <Link
+                  href="/login"
+                  className={buttonVariants({
+                    className: "max-sm:px-2 max-sm:text-xs",
+                  })}
+                >
                   Get Started
                 </Link>
               </>
