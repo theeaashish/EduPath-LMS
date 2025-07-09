@@ -1,5 +1,6 @@
 "use client";
 
+import { GoogleIcon } from "@/components/googleIcon/GoogleIcon";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -19,6 +20,7 @@ import { toast } from "sonner";
 export default function LoginForm() {
   const router = useRouter();
   const [githubPending, startGithubTransition] = useTransition();
+  const [googlePending, startGoogleTransition] = useTransition();
   const [emailPending, startEmailTransition] = useTransition();
   const [email, setEmail] = useState("");
 
@@ -30,6 +32,23 @@ export default function LoginForm() {
         fetchOptions: {
           onSuccess: () => {
             toast.success("Singned in with GitHub, you will be redirected...");
+          },
+          onError: () => {
+            toast.error("Internal Server Error");
+          },
+        },
+      });
+    });
+  }
+
+  async function signInWithGoogle() {
+    startGoogleTransition(async () => {
+      await authClient.signIn.social({
+        provider: "google",
+        callbackURL: "/",
+        fetchOptions: {
+          onSuccess: () => {
+            toast.success("Singned in with Google, you will be redirected...");
           },
           onError: () => {
             toast.error("Internal Server Error");
@@ -61,7 +80,7 @@ export default function LoginForm() {
       <CardHeader>
         <CardTitle className="text-xl text-center">Welcome back!</CardTitle>
         <CardDescription className="text-center">
-          Login with your GitHub or Email Account
+          Login with your GitHub or Google Account
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
@@ -80,6 +99,24 @@ export default function LoginForm() {
             <>
               <GithubIcon className="size-4" />
               SignIn with GitHub
+            </>
+          )}
+        </Button>
+        <Button
+          onClick={signInWithGoogle}
+          disabled={googlePending}
+          className="w-full cursor-pointer"
+          variant="outline"
+        >
+          {googlePending ? (
+            <>
+              <Loader className="size-4 animate-spin" />
+              Loading...
+            </>
+          ) : (
+            <>
+              <GoogleIcon />
+              SignIn with Google
             </>
           )}
         </Button>
