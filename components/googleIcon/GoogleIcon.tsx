@@ -1,8 +1,6 @@
-import { cn } from "@/lib/utils";
-
 export function GoogleIcon() {
   return (
-    <div >
+    <div>
       <svg
         width="24"
         height="24"
